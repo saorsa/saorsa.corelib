@@ -9,6 +9,8 @@ public class BusinessPageRequest<TId> : BusinessRequest<TId>
     public uint? PageSize { get; set; }
     
     public uint? PageIndex { get; set; }
+    
+    public IEnumerable<SortDescriptor>? SortBy { get; set; }
 }
 
 public class BusinessPageRequest : BusinessPageRequest<Guid>

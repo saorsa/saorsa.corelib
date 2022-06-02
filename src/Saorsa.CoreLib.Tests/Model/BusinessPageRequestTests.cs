@@ -9,6 +9,7 @@ public class BusinessPageRequestTests
         
         Assert.Null(request.FilterIDs);
         Assert.Null(request.ExcludeIDs);
+        Assert.Null(request.SortBy);
         Assert.False(request.PageIndex.HasValue);
         Assert.False(request.PageSize.HasValue);
     }
@@ -75,5 +76,17 @@ public class BusinessPageRequestTests
         Assert.IsNotNull(error.ExcludeIDs);
         Assert.IsNotEmpty(error.ExcludeIDs);
         Assert.That(Guid.Empty, Is.EqualTo(error.ExcludeIDs.Last()));
+    }
+
+    [Test]
+    public void TestSortBy()
+    {
+        var error = new BusinessPageRequest
+        {
+            SortBy = ArraySegment<SortDescriptor>.Empty
+        };
+        
+        Assert.IsNotNull(error.SortBy);
+        Assert.IsEmpty(error.SortBy);
     }
 }
