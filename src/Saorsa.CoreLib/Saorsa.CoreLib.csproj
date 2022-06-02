@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <RootNamespace>Saorsa</RootNamespace>
+        <Title>Saorsa.CoreLib</Title>
+        <Authors>Saorsa Ltd</Authors>
+        <Description>A core library of DTO models, utilities and shared functions used across the Saorsa universe.</Description>
+        <PackageTags>saorsa</PackageTags>
+        <AssemblyVersion>1.0.0</AssemblyVersion>
+        <FileVersion>1.0.0</FileVersion>
+    </PropertyGroup>
+
+</Project>
