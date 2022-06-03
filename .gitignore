@@ -59,3 +59,6 @@ project.fragment.lock.json
 _ReSharper*/
 *.[Rr]e[Ss]harper
 *.DotSettings.user
+
+# Nuget Packages
+*.nupkg
