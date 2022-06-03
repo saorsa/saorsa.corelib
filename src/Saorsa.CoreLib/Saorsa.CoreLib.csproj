@@ -11,6 +11,20 @@
         <PackageTags>saorsa</PackageTags>
         <AssemblyVersion>1.0.0</AssemblyVersion>
         <FileVersion>1.0.0</FileVersion>
+        <Copyright>Apache License Version 2.0</Copyright>
+        <PackageLicenseUrl>https://www.apache.org/licenses/LICENSE-2.0</PackageLicenseUrl>
+        <PackageIcon>saorsa-64x64.png</PackageIcon>
+        <RepositoryUrl>https://github.com/saorsa/saorsa.corelib</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     </PropertyGroup>
+
+    <ItemGroup>
+      <None Include="..\..\assets\saorsa-64x64.png">
+        <Pack>True</Pack>
+        <PackagePath></PackagePath>
+        <Link>saorsa-64x64.png</Link>
+      </None>
+    </ItemGroup>
 
 </Project>
