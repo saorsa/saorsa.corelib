@@ -2,7 +2,9 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Saorsa.CoreLib", "Saorsa.CoreLib\Saorsa.CoreLib.csproj", "{198FAE1D-4958-4A2A-865A-628A8708F6B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Saorsa.CoreLib.Tests", "Saorsa.CoreLib.Tests\Saorsa.CoreLib.Tests.csproj", "{D1658E6A-AC64-4EFE-9CBE-CDBF0AA64057}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{723B9DE4-9C1F-4247-B5D8-AE2C8468B5C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Saorsa.CoreLib.Tests", "..\tests\Saorsa.CoreLib.Tests\Saorsa.CoreLib.Tests.csproj", "{5C13125C-A6B9-4BAC-A93E-453DFCD1FA84}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -14,9 +16,12 @@ Global
 		{198FAE1D-4958-4A2A-865A-628A8708F6B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{198FAE1D-4958-4A2A-865A-628A8708F6B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{198FAE1D-4958-4A2A-865A-628A8708F6B9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D1658E6A-AC64-4EFE-9CBE-CDBF0AA64057}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D1658E6A-AC64-4EFE-9CBE-CDBF0AA64057}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D1658E6A-AC64-4EFE-9CBE-CDBF0AA64057}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D1658E6A-AC64-4EFE-9CBE-CDBF0AA64057}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C13125C-A6B9-4BAC-A93E-453DFCD1FA84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C13125C-A6B9-4BAC-A93E-453DFCD1FA84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C13125C-A6B9-4BAC-A93E-453DFCD1FA84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C13125C-A6B9-4BAC-A93E-453DFCD1FA84}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5C13125C-A6B9-4BAC-A93E-453DFCD1FA84} = {723B9DE4-9C1F-4247-B5D8-AE2C8468B5C8}
 	EndGlobalSection
 EndGlobal

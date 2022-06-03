@@ -17,7 +17,8 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Saorsa.CoreLib\Saorsa.CoreLib.csproj" />
+      <ProjectReference Include="..\..\src\Saorsa.CoreLib\Saorsa.CoreLib.csproj" />
     </ItemGroup>
+
 
 </Project>
