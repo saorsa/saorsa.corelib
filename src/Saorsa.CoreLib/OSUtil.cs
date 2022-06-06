@@ -33,12 +33,8 @@ public static class OSUtil
         get
         {
             var envVariable = IsWindows ? "%HOMEDRIVE%%HOMEPATH%" : "HOME";
-           
-            var homeFolder = Environment.GetEnvironmentVariable(envVariable)
-                             ?? throw new EnvironmentVariableException(
-                                 envVariable,
-                                 $"Environment variable '{envVariable}' is not set.");
 
+            var homeFolder = EnvUtil.GetEnvironmentVariableOrThrow(envVariable);
             return homeFolder;
         }
     }
