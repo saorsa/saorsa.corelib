@@ -1,6 +1,6 @@
 namespace Saorsa;
 
-public class EnvUtil
+public static class EnvUtil
 {
     public static string GetEnvironmentVariableOrThrow(string envVariable)
     {
