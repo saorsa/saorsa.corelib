@@ -2,36 +2,36 @@ namespace Saorsa.CoreLib.Tests.Security;
 
 public class AclMaskTests
 {
-    [TestCase(AclMask.Read | AclMask.Write, AclMask.ReadWrite)]
-    [TestCase(AclMask.Read | AclMask.Execute, AclMask.ReadExecute)]
-    [TestCase(AclMask.Read | AclMask.Execute | AclMask.Write, AclMask.Full)]
-    [TestCase(AclMask.Write | AclMask.Execute, AclMask.WriteExecute)]
+    [TestCase((byte)(AclMask.Read | AclMask.Write), (byte)AclMask.ReadWrite)]
+    [TestCase((byte)(AclMask.Read | AclMask.Execute), (byte)AclMask.ReadExecute)]
+    [TestCase((byte)(AclMask.Read | AclMask.Execute | AclMask.Write), (byte)AclMask.Full)]
+    [TestCase((byte)(AclMask.Write | AclMask.Execute), (byte)AclMask.WriteExecute)]
     public void TestAclEquality(AclMask left, AclMask right)
     {
         Assert.That(right, Is.EqualTo(left));
     }
     
-    [TestCase(AclMask.None, 0)]
-    [TestCase(AclMask.Read, 4)]
-    [TestCase(AclMask.Write, 2)]
-    [TestCase(AclMask.Execute, 1)]
-    [TestCase(AclMask.ReadWrite, 4 + 2)]
-    [TestCase(AclMask.ReadExecute,  4 + 1)]
-    [TestCase(AclMask.WriteExecute,  2 + 1)]
-    [TestCase(AclMask.Full,  4 + 2 + 1)]
+    [TestCase((byte)AclMask.None, 0)]
+    [TestCase((byte)AclMask.Read, 4)]
+    [TestCase((byte)AclMask.Write, 2)]
+    [TestCase((byte)AclMask.Execute, 1)]
+    [TestCase((byte)AclMask.ReadWrite, 4 + 2)]
+    [TestCase((byte)AclMask.ReadExecute,  4 + 1)]
+    [TestCase((byte)AclMask.WriteExecute,  2 + 1)]
+    [TestCase((byte)AclMask.Full,  4 + 2 + 1)]
     public void TestAclEqualityIntegers(AclMask left, int right)
     {
         Assert.That(right, Is.EqualTo((int) left));
     }
     
-    [TestCase(AclMask.None, false)]
-    [TestCase(AclMask.Read, true)]
-    [TestCase(AclMask.Write, false)]
-    [TestCase(AclMask.Execute, false)]
-    [TestCase(AclMask.ReadWrite, true)]
-    [TestCase(AclMask.ReadExecute, true)]
-    [TestCase(AclMask.WriteExecute, false)]
-    [TestCase(AclMask.Full, true)]
+    [TestCase((byte)AclMask.None, false)]
+    [TestCase((byte)AclMask.Read, true)]
+    [TestCase((byte)AclMask.Write, false)]
+    [TestCase((byte)AclMask.Execute, false)]
+    [TestCase((byte)AclMask.ReadWrite, true)]
+    [TestCase((byte)AclMask.ReadExecute, true)]
+    [TestCase((byte)AclMask.WriteExecute, false)]
+    [TestCase((byte)AclMask.Full, true)]
     public void TestReadPermissions(AclMask mask, bool canRead)
     {
         Assert.That(mask & AclMask.Read, canRead 
@@ -39,14 +39,14 @@ public class AclMaskTests
             : Is.Not.EqualTo(AclMask.Read));
     }
     
-    [TestCase(AclMask.None, false)]
-    [TestCase(AclMask.Read, false)]
-    [TestCase(AclMask.Write, true)]
-    [TestCase(AclMask.Execute, false)]
-    [TestCase(AclMask.ReadWrite, true)]
-    [TestCase(AclMask.ReadExecute, false)]
-    [TestCase(AclMask.WriteExecute, true)]
-    [TestCase(AclMask.Full, true)]
+    [TestCase((byte)AclMask.None, false)]
+    [TestCase((byte)AclMask.Read, false)]
+    [TestCase((byte)AclMask.Write, true)]
+    [TestCase((byte)AclMask.Execute, false)]
+    [TestCase((byte)AclMask.ReadWrite, true)]
+    [TestCase((byte)AclMask.ReadExecute, false)]
+    [TestCase((byte)AclMask.WriteExecute, true)]
+    [TestCase((byte)AclMask.Full, true)]
     public void TestWritePermissions(AclMask mask, bool canWrite)
     {
         Assert.That(mask & AclMask.Write, canWrite 
@@ -54,14 +54,14 @@ public class AclMaskTests
             : Is.Not.EqualTo(AclMask.Write));
     }
     
-    [TestCase(AclMask.None, false)]
-    [TestCase(AclMask.Read, false)]
-    [TestCase(AclMask.Write, false)]
-    [TestCase(AclMask.Execute, true)]
-    [TestCase(AclMask.ReadWrite, false)]
-    [TestCase(AclMask.ReadExecute, true)]
-    [TestCase(AclMask.WriteExecute, true)]
-    [TestCase(AclMask.Full, true)]
+    [TestCase((byte)AclMask.None, false)]
+    [TestCase((byte)AclMask.Read, false)]
+    [TestCase((byte)AclMask.Write, false)]
+    [TestCase((byte)AclMask.Execute, true)]
+    [TestCase((byte)AclMask.ReadWrite, false)]
+    [TestCase((byte)AclMask.ReadExecute, true)]
+    [TestCase((byte)AclMask.WriteExecute, true)]
+    [TestCase((byte)AclMask.Full, true)]
     public void TestExecutePermissions(AclMask mask, bool canWrite)
     {
         Assert.That(mask & AclMask.Execute, canWrite 

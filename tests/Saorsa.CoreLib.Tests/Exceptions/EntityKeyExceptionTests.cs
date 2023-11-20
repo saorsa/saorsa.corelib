@@ -1,19 +1,20 @@
 using System.Runtime.Serialization;
-using KeyNotFoundException = Saorsa.Exceptions.KeyNotFoundException;
+using Saorsa.Exceptions;
 
-namespace Saorsa.CoreLib.Tests;
+namespace Saorsa.CoreLib.Tests.Exceptions;
 
-public class KeyNotFoundExceptionTests
+
+public class EntityKeyExceptionTests
 {
     [Test]
     public void TestConstructor()
     {
-        var key = Guid.NewGuid();
+        var key = Guid.NewGuid().ToString("D");
         var message = Guid.NewGuid().ToString("D");
-        var exception = new KeyNotFoundException(key, message);
+        var exception = new EntityKeyException(key, message);
         
         Assert.NotNull(exception);
-        Assert.That(key, Is.EqualTo(exception.Key));
+        Assert.That(key, Is.EqualTo(exception.KeyName));
         Assert.That(message, Is.EqualTo(exception.Message));
         // ReSharper disable once UseIsOperator.1
         // ReSharper disable once UseMethodIsInstanceOfType
@@ -23,19 +24,19 @@ public class KeyNotFoundExceptionTests
     [Test]
     public void TestConstructorWithInnerException()
     {
-        var key = Guid.NewGuid();
+        var key = Guid.NewGuid().ToString("D");
         var message = Guid.NewGuid().ToString("D");
-        var exception = new KeyNotFoundException(key, message, new Exception());
-        
+        var exception = new EntityKeyException(key, message, new Exception());
+
         Assert.NotNull(exception.InnerException);
     }
 
     [Test]
     public void TestSerialization()
     {
-        var key = Guid.NewGuid();
+        var key = Guid.NewGuid().ToString("D");
         var message = Guid.NewGuid().ToString("D");
-        var exception = new KeyNotFoundException(key, message);
+        var exception = new EntityKeyException(key, message);
         var serializationInfo = new SerializationInfo(exception.GetType(), new FormatterConverter());
         var streamingContext = new StreamingContext();
         
@@ -44,11 +45,9 @@ public class KeyNotFoundExceptionTests
             exception.GetObjectData(serializationInfo, streamingContext);
         });
 
-        var serializedKey = serializationInfo.GetString(nameof(exception.Key));
+        var serializedKey = serializationInfo.GetString(SerializationKeys.KeyName);
         Assert.NotNull(serializedKey);
 
-        var parsed = Guid.Parse(serializedKey!);
-        Assert.That(exception.Key, Is.EqualTo(parsed));
-        Assert.That(key, Is.EqualTo(parsed));
+        Assert.That(exception.KeyName, Is.EqualTo(serializedKey));
     }
 }

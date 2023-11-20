@@ -19,5 +19,5 @@ echo "🤖 Running tests..."
 for path in tests/**/*.csproj; do
     echo " * Testing project at path ${path}: "
     dotnet clean ${path}
-    dotnet test -f net6.0 -c Release ${path}
+    dotnet test -f net7.0 -c Release ${path}
 done

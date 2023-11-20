@@ -2,6 +2,7 @@ namespace Saorsa;
 
 using System.Runtime.InteropServices;
 
+
 public static class OSUtil
 {
     public static readonly OSPlatform[] SupportedOSPlatforms = {

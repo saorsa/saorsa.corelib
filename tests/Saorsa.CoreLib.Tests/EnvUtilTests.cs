@@ -1,3 +1,5 @@
+using Saorsa.Exceptions;
+
 namespace Saorsa.CoreLib.Tests;
 
 public class EnvUtilTests

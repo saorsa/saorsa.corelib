@@ -1,4 +1,4 @@
-namespace Saorsa.Hephaestus.Exceptions;
+namespace Saorsa.Exceptions;
 
 
 /// <summary>
@@ -9,5 +9,10 @@ public static class SerializationKeys
     /// <summary>
     /// Serialization key for the KeyName property.
     /// </summary>
-    public const string KeyName = "Saorsa.Hephaestus.Exceptions.KeyName";
+    public const string KeyName = "Saorsa.Exceptions.KeyName";
+
+    /// <summary>
+    /// Serialization key for the ErrorCode property.
+    /// </summary>
+    public const string ErrorCode = "Saorsa.Exceptions.ErrorCode";
 }

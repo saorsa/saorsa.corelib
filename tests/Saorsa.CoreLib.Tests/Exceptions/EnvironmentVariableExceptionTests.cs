@@ -1,7 +1,6 @@
-using System.Runtime.Serialization;
 using Saorsa.Exceptions;
 
-namespace Saorsa.CoreLib.Tests;
+namespace Saorsa.CoreLib.Tests.Exceptions;
 
 public class EnvironmentVariableExceptionTests
 {

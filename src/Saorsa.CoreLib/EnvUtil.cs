@@ -1,4 +1,7 @@
+using Saorsa.Exceptions;
+
 namespace Saorsa;
+
 
 public static class EnvUtil
 {

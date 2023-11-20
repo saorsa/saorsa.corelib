@@ -40,9 +40,9 @@ public class AclTests
         Assert.That(acl.OtherPermissions, Is.EqualTo(AclMask.None));   
     }
 
-    [TestCase(AclMask.Full, AclMask.ReadExecute, AclMask.None)]
-    [TestCase(AclMask.None, AclMask.None, AclMask.None)]
-    [TestCase(AclMask.Full, AclMask.Full, AclMask.Read)]
+    [TestCase((byte)AclMask.Full, (byte)AclMask.ReadExecute, (byte)AclMask.None)]
+    [TestCase((byte)AclMask.None, (byte)AclMask.None, (byte)AclMask.None)]
+    [TestCase((byte)AclMask.Full, (byte)AclMask.Full, (byte)AclMask.Read)]
     public void TestConstructorForPermissions(AclMask user, AclMask group, AclMask other)
     {
         var acl = new Acl

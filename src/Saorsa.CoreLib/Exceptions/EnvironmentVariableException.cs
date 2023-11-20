@@ -1,12 +1,11 @@
-namespace Saorsa;
+namespace Saorsa.Exceptions;
 
-public class EnvironmentVariableException : KeyException<string>
+public class EnvironmentVariableException : EntityKeyException
 {
-    public EnvironmentVariableException(string key, string? message) : base(key, message)
-    {
-    }
-
-    public EnvironmentVariableException(string key, string? message, Exception? inner) : base(key, message, inner)
+    public EnvironmentVariableException(
+        string key,
+        string? message = null,
+        Exception? inner = null) : base(key, message, inner)
     {
     }
 }
