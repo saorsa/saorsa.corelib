@@ -1,15 +1,16 @@
 using System.Runtime.Serialization;
+using Saorsa.Exceptions;
 
 namespace Saorsa.CoreLib.Tests;
 
-public class KeyExceptionTests
+public class KeyExistsExceptionTests
 {
     [Test]
     public void TestConstructor()
     {
         var key = Guid.NewGuid();
         var message = Guid.NewGuid().ToString("D");
-        var exception = new KeyException(key, message);
+        var exception = new KeyExistsException(key, message);
         
         Assert.NotNull(exception);
         Assert.That(key, Is.EqualTo(exception.Key));
@@ -24,7 +25,7 @@ public class KeyExceptionTests
     {
         var key = Guid.NewGuid();
         var message = Guid.NewGuid().ToString("D");
-        var exception = new KeyException(key, message, new Exception());
+        var exception = new KeyExistsException(key, message, new Exception());
         
         Assert.NotNull(exception.InnerException);
     }
@@ -34,7 +35,7 @@ public class KeyExceptionTests
     {
         var key = Guid.NewGuid();
         var message = Guid.NewGuid().ToString("D");
-        var exception = new KeyException(key, message);
+        var exception = new KeyExistsException(key, message);
         var serializationInfo = new SerializationInfo(exception.GetType(), new FormatterConverter());
         var streamingContext = new StreamingContext();
         

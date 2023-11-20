@@ -1,4 +1,5 @@
 using System.Runtime.Serialization;
+using Saorsa.Exceptions;
 
 namespace Saorsa.CoreLib.Tests;
 
@@ -12,7 +13,7 @@ public class EnvironmentVariableExceptionTests
         var exception = new EnvironmentVariableException(key, message);
         
         Assert.NotNull(exception);
-        Assert.That(key, Is.EqualTo(exception.Key));
+        Assert.That(key, Is.EqualTo(exception.KeyName));
         Assert.That(message, Is.EqualTo(exception.Message));
         // ReSharper disable once UseIsOperator.1
         // ReSharper disable once UseMethodIsInstanceOfType
