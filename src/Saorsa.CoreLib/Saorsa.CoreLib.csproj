@@ -1,7 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net7.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <RootNamespace>Saorsa</RootNamespace>
@@ -9,8 +8,8 @@
         <Authors>Saorsa Ltd</Authors>
         <Description>A core library of DTO models, utilities and shared functions used across the Saorsa universe.</Description>
         <PackageTags>saorsa</PackageTags>
-        <AssemblyVersion>1.0.0</AssemblyVersion>
-        <FileVersion>1.0.0</FileVersion>
+        <AssemblyVersion>1.1.0</AssemblyVersion>
+        <FileVersion>1.1.0</FileVersion>
         <Copyright>Saorsa Ltd</Copyright>
         <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
         <PackageIcon>saorsa-64x64.png</PackageIcon>
@@ -18,6 +17,8 @@
         <RepositoryType>git</RepositoryType>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <LangVersion>11</LangVersion>
+        <TargetFrameworks>net7.0;net6.0</TargetFrameworks>
+        <Version>1.1.0</Version>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
