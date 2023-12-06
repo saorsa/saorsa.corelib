@@ -7,8 +7,8 @@ public class BusinessPageRequestTests
     {
         var request = new BusinessPageRequest();
         
-        Assert.Null(request.FilterIDs);
-        Assert.Null(request.ExcludeIDs);
+        Assert.Null(request.FilterByIdInRange);
+        Assert.Null(request.ExcludeIdInRange);
         Assert.Null(request.SortBy);
         Assert.False(request.PageIndex.HasValue);
         Assert.False(request.PageSize.HasValue);
@@ -47,7 +47,7 @@ public class BusinessPageRequestTests
     {
         var error = new BusinessPageRequest
         {
-            FilterIDs = new []
+            FilterByIdInRange = new []
             {
                 Guid.NewGuid(),
                 Guid.NewGuid(),
@@ -55,9 +55,9 @@ public class BusinessPageRequestTests
             },
         };
         
-        Assert.IsNotNull(error.FilterIDs);
-        Assert.IsNotEmpty(error.FilterIDs);
-        Assert.That(Guid.Empty, Is.EqualTo(error.FilterIDs.Last()));
+        Assert.IsNotNull(error.FilterByIdInRange);
+        Assert.IsNotEmpty(error.FilterByIdInRange);
+        Assert.That(Guid.Empty, Is.EqualTo(error.FilterByIdInRange.Last()));
     }
 
     [Test]
@@ -65,7 +65,7 @@ public class BusinessPageRequestTests
     {
         var error = new BusinessPageRequest
         {
-            ExcludeIDs = new []
+            ExcludeIdInRange = new []
             {
                 Guid.NewGuid(),
                 Guid.NewGuid(),
@@ -73,9 +73,9 @@ public class BusinessPageRequestTests
             },
         };
         
-        Assert.IsNotNull(error.ExcludeIDs);
-        Assert.IsNotEmpty(error.ExcludeIDs);
-        Assert.That(Guid.Empty, Is.EqualTo(error.ExcludeIDs.Last()));
+        Assert.IsNotNull(error.ExcludeIdInRange);
+        Assert.IsNotEmpty(error.ExcludeIdInRange);
+        Assert.That(Guid.Empty, Is.EqualTo(error.ExcludeIdInRange.Last()));
     }
 
     [Test]

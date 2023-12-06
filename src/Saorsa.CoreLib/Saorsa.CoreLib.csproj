@@ -20,6 +20,10 @@
         <LangVersion>11</LangVersion>
     </PropertyGroup>
 
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+      <DocumentationFile>bin\Release\net7.0\Saorsa.CoreLib.xml</DocumentationFile>
+    </PropertyGroup>
+
     <ItemGroup>
       <None Include="..\..\assets\saorsa-64x64.png">
         <Pack>True</Pack>
